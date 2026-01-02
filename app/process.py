@@ -15,19 +15,48 @@ from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_
 from fastapi.responses import Response
 import logging
 import json
+from datetime import datetime
+import uuid
 
 app = FastAPI()
 
 # Configure structured logging
+class JSONFormatter(logging.Formatter):
+    def format(self, record):
+        log_entry = {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.getMessage(),
+            "module": record.module,
+            "function": record.funcName,
+            "line": record.lineno
+        }
+        if hasattr(record, 'extra_data'):
+            log_entry.update(record.extra_data)
+        return json.dumps(log_entry)
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler('app.log'),
         logging.StreamHandler()
     ]
 )
+
+# Set JSON formatter for file handler
+file_handler = logging.FileHandler('app.log')
+file_handler.setFormatter(JSONFormatter())
+
+# Keep simple format for console
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
 logger = logging.getLogger(__name__)
+logger.handlers.clear()
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+logger.setLevel(logging.INFO)
 
 # Prometheus metrics
 REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP requests', ['method', 'endpoint'])
@@ -113,21 +142,48 @@ def convert_eml_to_pdf(eml_path: str) -> str:
 
 
 @app.post("/process/")
-async def process_document(file: UploadFile = File(...),source:str=Form("API")):#File(...) makes sure that the file is uploaded as part of the request parameters
+async def process_document(file: UploadFile = File(...),source:str=Form("API")):
+    request_id = str(uuid.uuid4())
     REQUEST_COUNT.labels(method='POST', endpoint='/process/').inc()
-    logger.info(f"Processing document: {file.filename}, source: {source}")
+    
+    logger.info("Document upload initiated", extra={
+        'extra_data': {
+            "request_id": request_id,
+            "event_type": "document_upload_start",
+            "filename": file.filename,
+            "source": source,
+            "file_size": file.size if hasattr(file, 'size') else None
+        }
+    })
+    
     try:
         file_location = os.path.join(UPLOAD_DIR, file.filename)
-        # full_path = os.path.abspath(file_location)
         with open(file_location, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
-        # Call your main function with the saved file path
-        main(file_location,source)
-        logger.info(f"Document processed successfully: {file.filename}")
-        return {"message": f"File '{file.filename}' processed successfully."}
+        
+        main(file_location, source, request_id)
+        
+        logger.info("Document processing completed successfully", extra={
+            'extra_data': {
+                "request_id": request_id,
+                "event_type": "document_processing_success",
+                "filename": file.filename,
+                "status": "success"
+            }
+        })
+        
+        return {"message": f"File '{file.filename}' processed successfully.", "request_id": request_id}
     except Exception as e:
-        logger.error(f"Error processing document {file.filename}: {str(e)}")
-        return {"error": str(e)}
+        logger.error("Document processing failed", extra={
+            'extra_data': {
+                "request_id": request_id,
+                "event_type": "document_processing_error",
+                "filename": file.filename,
+                "error": str(e),
+                "error_type": type(e).__name__
+            }
+        })
+        return {"error": str(e), "request_id": request_id}
 
 
 @app.get("/get_doc_types/")
@@ -142,52 +198,64 @@ async def get_doc_types():
     # For now, we will return a static list as an example
     return df.to_dict(orient="records")
 
-def main(file_path,source):
-    print("main function called")
-    process_file(file_path,source)
+def main(file_path, source, request_id=None):
+    process_file(file_path, source, request_id)
 
-
-def process_file(file_path,source):# Extract the file name from the path
-    logger.info(f"Starting file processing: {file_path}")
+def process_file(file_path, source, request_id=None):
     file_name = os.path.basename(file_path)
-    print(file_path)  
-    print(f"Document Name: {file_name}")
-    # source=random.choice(source_options)  # Randomly select a source from the options
     start_time = time.time()
+    
+    logger.info("File processing started", extra={
+        'extra_data': {
+            "request_id": request_id,
+            "event_type": "file_processing_start",
+            "file_name": file_name,
+            "file_path": file_path,
+            "source": source
+        }
+    })
+    
     with PROCESSING_TIME.time():
-        extracted_text = operation(file_path,source)
-    print(extracted_text)
+        extracted_text = operation(file_path, source)
+    
     # Convert list to string if needed
     if isinstance(extracted_text, list):
         text_content = str(extracted_text)
     else:
         text_content = extracted_text
-    doc_type,summary="other",text_content[:150] #get_gemini_response_with_context(extracted_text)
-    # print(f"Predicted Document Type: {doc_type}")
-    # print("++++++++++++++++++++++++++++++++++++++}")
-    # print(f"Summary: {summary}")
+        
+    doc_type, summary = "other", text_content[:150]
     processing_time_ms = int((time.time() - start_time) * 1000)
     full_path = os.path.abspath(file_path)
+    
     insert_document_log(file_name, source, doc_type, processing_time_ms, summary, full_path, use_azure=False)
     DOCUMENT_COUNT.labels(doc_type=doc_type).inc()
     
-    # Structured log entry
-    log_data = {
-        "event": "document_processed",
-        "file_name": file_name,
-        "source": source,
-        "doc_type": doc_type,
-        "processing_time_ms": processing_time_ms,
-        "file_path": full_path
-    }
-    logger.info(json.dumps(log_data))
+    # Professional structured log entry
+    logger.info("Document classification completed", extra={
+        'extra_data': {
+            "request_id": request_id,
+            "event_type": "document_classification",
+            "file_name": file_name,
+            "source": source,
+            "doc_type_predicted": doc_type,
+            "processing_time_ms": processing_time_ms,
+            "file_size_bytes": os.path.getsize(file_path) if os.path.exists(file_path) else None,
+            "extraction_method": "OCR",
+            "confidence_score": None
+        }
+    })
     
     if doc_type.strip().lower() == "other":
-        logger.warning(f"Document requires manual classification: {file_name}")
-        # send_email_notification(file_name, source, doc_type)
-        print(f"Document '{file_name}' requires manual classification/handling.")
-        
-    print(f"{file_name}Document processed successfully!")
+        logger.warning("Manual classification required", extra={
+            'extra_data': {
+                "request_id": request_id,
+                "event_type": "manual_classification_required",
+                "file_name": file_name,
+                "doc_type": doc_type,
+                "action_required": "manual_review"
+            }
+        })
     
     
 @app.get("/get_sources/")

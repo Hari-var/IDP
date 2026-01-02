@@ -9,7 +9,7 @@ DB_PATH = os.path.join(BASE_DIR, "synthetic.db")
 print(f"Database path set to: {DB_PATH}")
 
 # Load environment variables from .env file
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+load_dotenv()
 
 # Azure SQL connection settings from environment
 AZURE_SQL_CONFIG = {

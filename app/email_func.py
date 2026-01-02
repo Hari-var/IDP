@@ -44,9 +44,10 @@
 
 # from azure.communication.email import EmailClient
 # from azure.core.credentials import AzureKeyCredential
+# import os
 
-# credential = AzureKeyCredential("BUWBUP5PpFKZywNMg94DJg7HGROomxyNbCdbYoBFL7ovl6Cvds1gJQQJ99BFACULyCpydQxwAAAAAZCSbulm")
-# endpoint = "https://shashank-communication-service.india.communication.azure.com"
+# credential = AzureKeyCredential(os.getenv("AZURE_COMMUNICATION_KEY", "your-key-here"))
+# endpoint = os.getenv("AZURE_COMMUNICATION_ENDPOINT", "https://your-service.communication.azure.com")
 # client = EmailClient(endpoint, credential)
 # def send_email_notification(file_name, source, doc_type):
 #     message = {
