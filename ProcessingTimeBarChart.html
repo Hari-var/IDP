@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Time Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 600px; height: 400px; margin: 20px auto;">
+        <canvas id="processingTimeChart"></canvas>
+    </div>
+
+    <script>
+        async function fetchProcessingTime() {
+            try {
+                const response = await fetch('http://localhost:8000/get_avg_processing_time/');
+                const data = await response.json();
+                
+                const labels = data.map(item => item.doc_type_predicted.replace(/\*\*Classification Result:\*\*\n?/g, '').trim());
+                const times = data.map(item => item.avg_time);
+                
+                const ctx = document.getElementById('processingTimeChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Average Processing Time (ms)',
+                            data: times,
+                            backgroundColor: '#36A2EB'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Average Processing Time by Document Type'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Time (ms)'
+                                }
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching processing time:', error);
+            }
+        }
+
+        fetchProcessingTime();
+    </script>
+</body>
+</html>
