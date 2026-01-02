@@ -1,10 +1,14 @@
 import google.generativeai as genai 
 import pandas as pd
+from dotenv import load_dotenv
+import os
 # doc_types=pd.read_excel("Doc_type field configuration.xlsx",sheet_name="doc_types")["doc_types"].tolist()  
 def get_gemini_response(user_message):
     
     try:
-        genai.configure(api_key='AIzaSyDiB4eEW2OLHKyAIQaBHfsGPaEnCwCeLH4')
+        load_dotenv()
+        api=os.environ.get("GENAI_API_KEY")
+        genai.configure(api_key=api)
         model = genai.GenerativeModel('gemini-2.5-flash')  # Ensure the model name is correct
         response = model.generate_content(f"You are a helpful assistant. User: {user_message}")
         if response and hasattr(response, 'candidates') and len(response.candidates) > 0:
