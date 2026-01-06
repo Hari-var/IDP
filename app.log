@@ -1,0 +1,637 @@
+{"timestamp": "2026-01-05T05:05:37.521892Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 149, "request_id": "9c7f1362-6f14-44e0-9619-8eca27cf2c89", "event_type": "document_upload_start", "filename": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API", "file_size": 562798}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T05:05:37.563739Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 208, "request_id": "9c7f1362-6f14-44e0-9619-8eca27cf2c89", "event_type": "file_processing_start", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "file_path": "uploaded_files\\Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T05:05:38.522764Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 235, "request_id": "9c7f1362-6f14-44e0-9619-8eca27cf2c89", "event_type": "document_classification", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API", "doc_type_predicted": "other", "processing_time_ms": 902, "file_size_bytes": 562798, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T05:05:38.523664Z", "level": "WARNING", "logger": "app.process", "message": "Manual classification required", "module": "process", "function": "process_file", "line": 250, "request_id": "9c7f1362-6f14-44e0-9619-8eca27cf2c89", "event_type": "manual_classification_required", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "doc_type": "other", "action_required": "manual_review"}
+WARNING:app.process:Manual classification required
+{"timestamp": "2026-01-05T05:05:38.524941Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 166, "request_id": "9c7f1362-6f14-44e0-9619-8eca27cf2c89", "event_type": "document_processing_success", "filename": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T05:13:58.862421Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 149, "request_id": "45a0caf7-3654-43bd-8e5d-9bcee56d21ec", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T05:13:58.895934Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 208, "request_id": "45a0caf7-3654-43bd-8e5d-9bcee56d21ec", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T05:13:58.957582Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 235, "request_id": "45a0caf7-3654-43bd-8e5d-9bcee56d21ec", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "other", "processing_time_ms": 29, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T05:13:58.959699Z", "level": "WARNING", "logger": "app.process", "message": "Manual classification required", "module": "process", "function": "process_file", "line": 250, "request_id": "45a0caf7-3654-43bd-8e5d-9bcee56d21ec", "event_type": "manual_classification_required", "file_name": "claim_submission.eml", "doc_type": "other", "action_required": "manual_review"}
+WARNING:app.process:Manual classification required
+{"timestamp": "2026-01-05T05:13:58.961811Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 166, "request_id": "45a0caf7-3654-43bd-8e5d-9bcee56d21ec", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T06:03:26.164938Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 149, "request_id": "bbed98e7-bc5b-4f73-a730-218176687e16", "event_type": "document_upload_start", "filename": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API", "file_size": 562798}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T06:03:26.208284Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 208, "request_id": "bbed98e7-bc5b-4f73-a730-218176687e16", "event_type": "file_processing_start", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "file_path": "uploaded_files\\Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T06:03:26.721802Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 235, "request_id": "bbed98e7-bc5b-4f73-a730-218176687e16", "event_type": "document_classification", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "source": "API", "doc_type_predicted": "other", "processing_time_ms": 476, "file_size_bytes": 562798, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T06:03:26.722731Z", "level": "WARNING", "logger": "app.process", "message": "Manual classification required", "module": "process", "function": "process_file", "line": 250, "request_id": "bbed98e7-bc5b-4f73-a730-218176687e16", "event_type": "manual_classification_required", "file_name": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "doc_type": "other", "action_required": "manual_review"}
+WARNING:app.process:Manual classification required
+{"timestamp": "2026-01-05T06:03:26.723902Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 166, "request_id": "bbed98e7-bc5b-4f73-a730-218176687e16", "event_type": "document_processing_success", "filename": "Brain Neoplasm Identification using CNN with VGG16 Model.pdf", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T08:32:59.398384Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 156, "request_id": "f6badc21-a9a1-43a7-a1ca-cb741d851e77", "event_type": "document_upload_start", "filename": "Subrogation029.tiff", "source": "API", "file_size": 400454}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T08:32:59.410945Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 215, "request_id": "f6badc21-a9a1-43a7-a1ca-cb741d851e77", "event_type": "file_processing_start", "file_name": "Subrogation029.tiff", "file_path": "uploaded_files\\Subrogation029.tiff", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T08:33:14.720666Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 261, "request_id": "f6badc21-a9a1-43a7-a1ca-cb741d851e77", "event_type": "document_classification", "file_name": "Subrogation029.tiff", "source": "API", "doc_type_predicted": "other", "processing_time_ms": 15269, "file_size_bytes": 400454, "extraction_method": "OCR", "confidence_score": 0.85}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T08:33:14.721864Z", "level": "WARNING", "logger": "app.process", "message": "Manual classification required", "module": "process", "function": "process_file", "line": 276, "request_id": "f6badc21-a9a1-43a7-a1ca-cb741d851e77", "event_type": "manual_classification_required", "file_name": "Subrogation029.tiff", "doc_type": "other", "action_required": "manual_review"}
+WARNING:app.process:Manual classification required
+{"timestamp": "2026-01-05T08:33:14.722702Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 173, "request_id": "f6badc21-a9a1-43a7-a1ca-cb741d851e77", "event_type": "document_processing_success", "filename": "Subrogation029.tiff", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T09:41:34.020973Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 168, "request_id": "413df4d7-01e4-4d9d-b22f-2288cea80122", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T09:41:34.076823Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 227, "request_id": "413df4d7-01e4-4d9d-b22f-2288cea80122", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T09:41:44.200969Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 265, "request_id": "413df4d7-01e4-4d9d-b22f-2288cea80122", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "First Notice of Loss (FNOL)", "processing_time_ms": 9410, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T09:41:44.202890Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 185, "request_id": "413df4d7-01e4-4d9d-b22f-2288cea80122", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T09:49:22.594708Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 168, "request_id": "84a2a3b5-97b0-4690-a194-db6037fcbe44", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T09:49:22.644063Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 227, "request_id": "84a2a3b5-97b0-4690-a194-db6037fcbe44", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T09:49:29.281979Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 265, "request_id": "84a2a3b5-97b0-4690-a194-db6037fcbe44", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "First Notice of Loss (FNOL)", "processing_time_ms": 6580, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T09:49:29.284979Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 185, "request_id": "84a2a3b5-97b0-4690-a194-db6037fcbe44", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully
+{"timestamp": "2026-01-05T09:57:09.324932Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 168, "request_id": "333845bd-9cff-4a5e-90cb-7568ceaac757", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T09:57:09.370642Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 227, "request_id": "333845bd-9cff-4a5e-90cb-7568ceaac757", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T09:57:18.621248Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 265, "request_id": "333845bd-9cff-4a5e-90cb-7568ceaac757", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "First Notice of Loss (FNOL)", "processing_time_ms": 9219, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T09:57:18.622737Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 185, "request_id": "333845bd-9cff-4a5e-90cb-7568ceaac757", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Classification=PASS, Summary Similarity=0.53
+INFO:benchmark:Test 2: Classification=PASS, Summary Similarity=0.55
+INFO:benchmark:Test 3: Classification=PASS, Summary Similarity=0.63
+INFO:benchmark:Test 4: Classification=FAIL, Summary Similarity=0.13
+INFO:benchmark:Test 5: Classification=FAIL, Summary Similarity=0.14
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 60.0%, Average Summary Similarity: 0.40
+INFO:benchmark:Tests Passed: 3/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/15
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 6.7%
+INFO:benchmark:Tests Passed: 1/15
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Result=FAIL
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 6.7%
+INFO:benchmark:Tests Passed: 1/15
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/15
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 6.7%
+INFO:benchmark:Tests Passed: 1/15
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+INFO:benchmark:Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+INFO:benchmark:Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 6.7%
+INFO:benchmark:Tests Passed: 1/15
+INFO:benchmark:Benchmark scheduler started - running every 0.03 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 0.03 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 20.0%
+INFO:benchmark:Tests Passed: 1/5
+INFO:benchmark:Benchmark scheduler started - running every 0.03 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 0.03 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 20.0%
+INFO:benchmark:Tests Passed: 1/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 60.0%
+INFO:benchmark:Tests Passed: 3/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 60.0%
+INFO:benchmark:Tests Passed: 3/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 60.0%
+INFO:benchmark:Tests Passed: 3/5
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+{"timestamp": "2026-01-05T13:02:19.139234Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 172, "request_id": "83e32114-fed7-4658-820f-e6458ab9c7ab", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-05T13:02:19.172771Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 231, "request_id": "83e32114-fed7-4658-820f-e6458ab9c7ab", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-05T13:02:19.953985Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 269, "request_id": "83e32114-fed7-4658-820f-e6458ab9c7ab", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "Error", "processing_time_ms": 736, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-05T13:02:19.955608Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 189, "request_id": "83e32114-fed7-4658-820f-e6458ab9c7ab", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 0.02 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 0.0%
+INFO:benchmark:Tests Passed: 0/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/plea agreements, sanctions, and terms negotiated between parties involved in disputes', Exact=FAIL, Semantic=0.685, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 80.0%
+INFO:benchmark:Tests Passed: 4/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 60.0%
+INFO:benchmark:Tests Passed: 3/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+INFO:benchmark:Benchmark scheduler started - running every 5.0 hours
+INFO:benchmark:Starting benchmark test
+INFO:benchmark:Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+INFO:benchmark:Waiting 30 seconds before next test case...
+INFO:benchmark:Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+INFO:benchmark:BENCHMARK RESULTS - Classification Accuracy: 100.0%
+INFO:benchmark:Tests Passed: 5/5
+{"timestamp": "2026-01-06T10:47:33.736545Z", "level": "INFO", "logger": "app.process", "message": "Document upload initiated", "module": "process", "function": "process_document", "line": 172, "request_id": "a2de3ce4-eefd-44d6-a161-223e95ef1404", "event_type": "document_upload_start", "filename": "claim_submission.eml", "source": "API", "file_size": 706}
+INFO:app.process:Document upload initiated
+{"timestamp": "2026-01-06T10:47:33.790134Z", "level": "INFO", "logger": "app.process", "message": "File processing started", "module": "process", "function": "process_file", "line": 231, "request_id": "a2de3ce4-eefd-44d6-a161-223e95ef1404", "event_type": "file_processing_start", "file_name": "claim_submission.eml", "file_path": "uploaded_files\\claim_submission.eml", "source": "API"}
+INFO:app.process:File processing started
+{"timestamp": "2026-01-06T10:47:46.793077Z", "level": "INFO", "logger": "app.process", "message": "Document classification completed", "module": "process", "function": "process_file", "line": 269, "request_id": "a2de3ce4-eefd-44d6-a161-223e95ef1404", "event_type": "document_classification", "file_name": "claim_submission.eml", "source": "API", "doc_type_predicted": "First Notice of Loss (FNOL)", "processing_time_ms": 12919, "file_size_bytes": 706, "extraction_method": "OCR", "confidence_score": null}
+INFO:app.process:Document classification completed
+{"timestamp": "2026-01-06T10:47:46.794522Z", "level": "INFO", "logger": "app.process", "message": "Document processing completed successfully", "module": "process", "function": "process_document", "line": 189, "request_id": "a2de3ce4-eefd-44d6-a161-223e95ef1404", "event_type": "document_processing_success", "filename": "claim_submission.eml", "status": "success"}
+INFO:app.process:Document processing completed successfully

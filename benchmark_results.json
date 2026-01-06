@@ -1,0 +1,530 @@
+[
+  {
+    "timestamp": "2026-01-05T18:56:12.045765",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  },
+  {
+    "timestamp": "2026-01-05T19:07:11.473037",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.35539472103118896,
+        "classification_correct": false
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.292234867811203,
+        "classification_correct": false
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20304913818836212,
+        "classification_correct": false
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20091265439987183,
+        "classification_correct": false
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.22920218110084534,
+        "classification_correct": false
+      }
+    ],
+    "classification_accuracy": 0.0,
+    "correct_classifications": 0
+  },
+  {
+    "timestamp": "2026-01-05T19:19:56.192402",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.35539472103118896,
+        "classification_correct": false
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.292234867811203,
+        "classification_correct": false
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20304913818836212,
+        "classification_correct": false
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20091265439987183,
+        "classification_correct": false
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.22920218110084534,
+        "classification_correct": false
+      }
+    ],
+    "classification_accuracy": 0.0,
+    "correct_classifications": 0
+  },
+  {
+    "timestamp": "2026-01-05T19:42:53.528084",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.35539472103118896,
+        "classification_correct": false
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.292234867811203,
+        "classification_correct": false
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20304913818836212,
+        "classification_correct": false
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20091265439987183,
+        "classification_correct": false
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.22920218110084534,
+        "classification_correct": false
+      }
+    ],
+    "classification_accuracy": 0.0,
+    "correct_classifications": 0
+  },
+  {
+    "timestamp": "2026-01-05T21:19:15.491793",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/plea agreements, sanctions, and terms negotiated between parties involved in disputes",
+        "exact_match": false,
+        "semantic_similarity": 0.685481607913971,
+        "classification_correct": false
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 80.0,
+    "correct_classifications": 4
+  },
+  {
+    "timestamp": "2026-01-05T21:39:00.390055",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.292234867811203,
+        "classification_correct": false
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Error",
+        "exact_match": false,
+        "semantic_similarity": 0.20091265439987183,
+        "classification_correct": false
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 60.0,
+    "correct_classifications": 3
+  },
+  {
+    "timestamp": "2026-01-05T21:45:50.527409",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  },
+  {
+    "timestamp": "2026-01-05T21:53:03.605898",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  },
+  {
+    "timestamp": "2026-01-06T10:00:21.830944",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  },
+  {
+    "timestamp": "2026-01-06T14:36:34.698716",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  },
+  {
+    "timestamp": "2026-01-06T14:52:16.683902",
+    "total_tests": 5,
+    "test_results": [
+      {
+        "test_id": 1,
+        "expected_doc_type": "Police Reports",
+        "predicted_doc_type": "Police Reports",
+        "exact_match": true,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      },
+      {
+        "test_id": 2,
+        "expected_doc_type": "Proof of Loss",
+        "predicted_doc_type": "First Notice of Loss (FNOL)",
+        "exact_match": false,
+        "semantic_similarity": 0.7656116485595703,
+        "classification_correct": true
+      },
+      {
+        "test_id": 3,
+        "expected_doc_type": "Repair Estimates",
+        "predicted_doc_type": "Repair Estimates and Invoices",
+        "exact_match": false,
+        "semantic_similarity": 0.7869928479194641,
+        "classification_correct": true
+      },
+      {
+        "test_id": 4,
+        "expected_doc_type": "Legal Documents",
+        "predicted_doc_type": "Settlement/Plea Agreements",
+        "exact_match": false,
+        "semantic_similarity": 0.7898159027099609,
+        "classification_correct": true
+      },
+      {
+        "test_id": 5,
+        "expected_doc_type": "Medical Records",
+        "predicted_doc_type": "Medical Bills",
+        "exact_match": false,
+        "semantic_similarity": 1.0,
+        "classification_correct": true
+      }
+    ],
+    "classification_accuracy": 100.0,
+    "correct_classifications": 5
+  }
+]

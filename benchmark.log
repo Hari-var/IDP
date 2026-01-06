@@ -1,0 +1,557 @@
+2026-01-05 15:37:37,346 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:37:37,348 - INFO - Starting benchmark test
+2026-01-05 15:37:44,132 - INFO - Test 1: Classification=PASS, Summary Similarity=0.53
+2026-01-05 15:37:49,905 - INFO - Test 2: Classification=PASS, Summary Similarity=0.55
+2026-01-05 15:37:56,227 - INFO - Test 3: Classification=PASS, Summary Similarity=0.63
+2026-01-05 15:37:56,724 - INFO - Test 4: Classification=FAIL, Summary Similarity=0.13
+2026-01-05 15:37:57,239 - INFO - Test 5: Classification=FAIL, Summary Similarity=0.14
+2026-01-05 15:37:57,239 - INFO - BENCHMARK RESULTS - Classification Accuracy: 60.0%, Average Summary Similarity: 0.40
+2026-01-05 15:37:57,240 - INFO - Tests Passed: 3/5
+2026-01-05 15:41:48,186 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:41:48,187 - INFO - Starting benchmark test
+2026-01-05 15:41:51,089 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:41:51,599 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+2026-01-05 15:41:52,101 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+2026-01-05 15:41:52,681 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:41:53,190 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Result=FAIL
+2026-01-05 15:41:53,684 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:41:54,210 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:41:54,720 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:41:55,231 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+2026-01-05 15:41:55,712 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:41:56,276 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+2026-01-05 15:41:56,814 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Result=FAIL
+2026-01-05 15:41:57,307 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:41:57,812 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:41:58,351 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:41:58,352 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 15:41:58,352 - INFO - Tests Passed: 0/15
+2026-01-05 15:44:49,286 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:44:49,287 - INFO - Starting benchmark test
+2026-01-05 15:44:54,697 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Result=PASS
+2026-01-05 15:44:59,735 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Result=FAIL
+2026-01-05 15:45:07,378 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Result=FAIL
+2026-01-05 15:45:07,910 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:45:08,462 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Result=FAIL
+2026-01-05 15:45:09,044 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:45:09,597 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:45:10,149 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:45:10,714 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Result=FAIL
+2026-01-05 15:45:11,290 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:45:11,841 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Result=FAIL
+2026-01-05 15:45:12,406 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Result=FAIL
+2026-01-05 15:45:13,001 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:45:13,586 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Result=FAIL
+2026-01-05 15:45:14,139 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Result=FAIL
+2026-01-05 15:45:14,139 - INFO - BENCHMARK RESULTS - Classification Accuracy: 6.7%
+2026-01-05 15:45:14,140 - INFO - Tests Passed: 1/15
+2026-01-05 15:47:04,147 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:47:04,148 - INFO - Starting benchmark test
+2026-01-05 15:47:32,500 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:47:32,503 - INFO - Starting benchmark test
+2026-01-05 15:47:39,354 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Result=PASS
+2026-01-05 15:47:46,630 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Result=FAIL
+2026-01-05 15:47:51,871 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Result=FAIL
+2026-01-05 15:47:57,865 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Result=FAIL
+2026-01-05 15:48:06,472 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Result=FAIL
+2026-01-05 15:48:53,077 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:48:53,079 - INFO - Starting benchmark test
+2026-01-05 15:49:24,678 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:49:24,681 - INFO - Starting benchmark test
+2026-01-05 15:49:32,622 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 15:49:36,096 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 15:49:36,819 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 15:49:37,675 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:49:38,432 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:49:39,219 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:49:40,003 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:49:40,856 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:49:41,713 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 15:49:42,536 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 15:49:43,370 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 15:49:44,228 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:49:45,031 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:49:45,835 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:49:46,687 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:49:46,688 - INFO - BENCHMARK RESULTS - Classification Accuracy: 6.7%
+2026-01-05 15:49:46,688 - INFO - Tests Passed: 1/15
+2026-01-05 15:51:48,564 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:51:48,565 - INFO - Starting benchmark test
+2026-01-05 15:51:49,665 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 15:51:50,457 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 15:51:51,282 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 15:51:52,291 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:51:53,146 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:51:54,035 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:51:54,906 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:51:55,604 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:51:56,341 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 15:51:57,005 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 15:51:57,809 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 15:51:58,529 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:51:59,300 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:52:00,037 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:52:00,744 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:52:00,744 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 15:52:00,744 - INFO - Tests Passed: 0/15
+2026-01-05 15:56:29,453 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 15:56:29,454 - INFO - Starting benchmark test
+2026-01-05 15:56:35,563 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 15:56:41,612 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+2026-01-05 15:56:49,038 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+2026-01-05 15:56:49,760 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:56:50,516 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:56:51,155 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:56:51,787 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:56:52,564 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:56:53,373 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 15:56:54,222 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 15:56:55,081 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 15:56:55,778 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 15:56:56,461 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 15:56:57,084 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 15:56:57,734 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 15:56:57,734 - INFO - BENCHMARK RESULTS - Classification Accuracy: 6.7%
+2026-01-05 15:56:57,735 - INFO - Tests Passed: 1/15
+2026-01-05 16:01:57,587 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 16:01:57,589 - INFO - Starting benchmark test
+2026-01-05 16:02:03,046 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:02:09,783 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+2026-01-05 16:02:16,190 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+2026-01-05 16:02:16,936 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:02:17,629 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 16:02:18,334 - INFO - Test 6: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 16:02:19,065 - INFO - Test 7: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 16:02:19,830 - INFO - Test 8: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:02:20,589 - INFO - Test 9: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:02:21,378 - INFO - Test 10: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:02:22,059 - INFO - Test 11: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:02:22,788 - INFO - Test 12: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 16:02:23,552 - INFO - Test 13: Expected='Policy Documents', Predicted='Error', Exact=FAIL, Semantic=0.187, Result=FAIL
+2026-01-05 16:02:24,344 - INFO - Test 14: Expected='Investigation Reports', Predicted='Error', Exact=FAIL, Semantic=0.235, Result=FAIL
+2026-01-05 16:02:25,176 - INFO - Test 15: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:02:25,177 - INFO - BENCHMARK RESULTS - Classification Accuracy: 6.7%
+2026-01-05 16:02:25,178 - INFO - Tests Passed: 1/15
+2026-01-05 16:11:06,215 - INFO - Benchmark scheduler started - running every 0.03 hours
+2026-01-05 16:11:06,218 - INFO - Starting benchmark test
+2026-01-05 16:11:34,165 - INFO - Benchmark scheduler started - running every 0.03 hours
+2026-01-05 16:11:34,167 - INFO - Starting benchmark test
+2026-01-05 16:11:39,261 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:11:44,779 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=FAIL
+2026-01-05 16:11:50,423 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=FAIL
+2026-01-05 16:11:51,161 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:11:51,895 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.153, Result=FAIL
+2026-01-05 16:11:51,895 - INFO - BENCHMARK RESULTS - Classification Accuracy: 20.0%
+2026-01-05 16:11:51,896 - INFO - Tests Passed: 1/5
+2026-01-05 16:13:22,868 - INFO - Benchmark scheduler started - running every 0.03 hours
+2026-01-05 16:13:22,870 - INFO - Starting benchmark test
+2026-01-05 16:13:49,532 - INFO - Benchmark scheduler started - running every 0.03 hours
+2026-01-05 16:13:49,533 - INFO - Starting benchmark test
+2026-01-05 16:13:55,088 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:13:55,939 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:13:56,594 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:13:57,334 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:13:58,066 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:13:58,067 - INFO - BENCHMARK RESULTS - Classification Accuracy: 20.0%
+2026-01-05 16:13:58,067 - INFO - Tests Passed: 1/5
+2026-01-05 16:15:46,110 - INFO - Starting benchmark test
+2026-01-05 16:15:47,042 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:15:47,821 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:15:48,505 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:15:49,247 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:15:49,954 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:15:49,954 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:15:49,955 - INFO - Tests Passed: 0/5
+2026-01-05 16:17:37,990 - INFO - Starting benchmark test
+2026-01-05 16:17:39,320 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:17:40,724 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:17:42,079 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:17:43,402 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:17:44,701 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:17:44,702 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:17:44,703 - INFO - Tests Passed: 0/5
+2026-01-05 16:19:32,755 - INFO - Starting benchmark test
+2026-01-05 16:19:34,191 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:19:35,384 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:19:36,708 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:19:38,254 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:19:39,560 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:19:39,561 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:19:39,563 - INFO - Tests Passed: 0/5
+2026-01-05 16:21:27,621 - INFO - Starting benchmark test
+2026-01-05 16:21:28,565 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:21:29,269 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:21:30,001 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:21:30,698 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:21:31,427 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:21:31,427 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:21:31,427 - INFO - Tests Passed: 0/5
+2026-01-05 16:23:35,787 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:23:35,790 - INFO - Starting benchmark test
+2026-01-05 16:24:02,657 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:24:02,659 - INFO - Starting benchmark test
+2026-01-05 16:24:09,065 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:24:15,406 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 16:24:21,507 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 16:24:22,273 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:24:23,064 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:24:23,064 - INFO - BENCHMARK RESULTS - Classification Accuracy: 60.0%
+2026-01-05 16:24:23,065 - INFO - Tests Passed: 3/5
+2026-01-05 16:25:35,112 - INFO - Starting benchmark test
+2026-01-05 16:25:41,262 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:25:46,813 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 16:25:54,366 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 16:25:55,309 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:25:56,218 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:25:56,219 - INFO - BENCHMARK RESULTS - Classification Accuracy: 60.0%
+2026-01-05 16:25:56,220 - INFO - Tests Passed: 3/5
+2026-01-05 16:27:08,277 - INFO - Starting benchmark test
+2026-01-05 16:27:14,195 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:27:20,424 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 16:27:26,497 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 16:27:27,356 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:27:28,146 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:27:28,147 - INFO - BENCHMARK RESULTS - Classification Accuracy: 60.0%
+2026-01-05 16:27:28,147 - INFO - Tests Passed: 3/5
+2026-01-05 16:29:09,914 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:29:09,917 - INFO - Starting benchmark test
+2026-01-05 16:29:41,300 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:29:41,306 - INFO - Starting benchmark test
+2026-01-05 16:29:48,094 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 16:29:48,094 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:30:21,694 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:30:21,694 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:32:47,268 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:32:47,271 - INFO - Starting benchmark test
+2026-01-05 16:32:48,326 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:32:48,327 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:33:19,752 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:33:19,753 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:33:51,129 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:33:51,130 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:34:22,472 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:34:22,473 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:34:53,859 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:34:53,860 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:34:53,861 - INFO - Tests Passed: 0/5
+2026-01-05 16:36:05,931 - INFO - Starting benchmark test
+2026-01-05 16:36:06,954 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:36:06,955 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:36:38,057 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:36:38,059 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:37:08,971 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:37:08,972 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:37:47,345 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 16:37:47,349 - INFO - Starting benchmark test
+2026-01-05 16:37:48,395 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:37:48,395 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:38:19,200 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:38:19,201 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:38:49,965 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:38:49,965 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:39:20,730 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 16:39:20,730 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:39:51,737 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 16:39:51,737 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 16:39:51,737 - INFO - Tests Passed: 0/5
+2026-01-05 16:41:03,794 - INFO - Starting benchmark test
+2026-01-05 16:41:05,261 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 16:41:05,262 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:41:36,608 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 16:41:36,609 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 16:42:07,908 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 16:42:07,910 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:08:43,248 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:08:43,249 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:09:14,416 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:09:14,417 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:09:14,418 - INFO - Tests Passed: 0/5
+2026-01-05 18:10:26,515 - INFO - Starting benchmark test
+2026-01-05 18:10:27,866 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:10:27,867 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:10:59,165 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:10:59,165 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:11:30,578 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:11:30,579 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:12:01,725 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:12:01,726 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:12:33,117 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:12:33,117 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:12:33,117 - INFO - Tests Passed: 0/5
+2026-01-05 18:13:45,214 - INFO - Starting benchmark test
+2026-01-05 18:13:46,651 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:13:46,652 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:14:18,006 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:14:18,007 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:14:49,267 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:14:49,268 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:15:20,461 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:15:20,462 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:15:51,550 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:15:51,551 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:15:51,552 - INFO - Tests Passed: 0/5
+2026-01-05 18:17:03,643 - INFO - Starting benchmark test
+2026-01-05 18:17:05,019 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:17:05,019 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:17:36,310 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:17:36,310 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:18:07,480 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:18:07,481 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:18:38,551 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:18:38,552 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:19:09,951 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:19:09,952 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:19:09,952 - INFO - Tests Passed: 0/5
+2026-01-05 18:20:22,054 - INFO - Starting benchmark test
+2026-01-05 18:20:23,290 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:20:23,291 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:20:54,532 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:20:54,532 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:21:25,806 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:21:25,806 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:21:56,894 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:21:56,895 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:22:27,949 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:22:27,950 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:22:27,950 - INFO - Tests Passed: 0/5
+2026-01-05 18:23:40,039 - INFO - Starting benchmark test
+2026-01-05 18:23:41,284 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:23:41,284 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:24:12,639 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:24:12,640 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:24:43,956 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:24:43,957 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:25:15,264 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:25:15,265 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:25:46,506 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:25:46,506 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:25:46,507 - INFO - Tests Passed: 0/5
+2026-01-05 18:26:58,601 - INFO - Starting benchmark test
+2026-01-05 18:26:59,798 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:26:59,799 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:27:30,894 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:27:30,894 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:28:01,947 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:28:01,948 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:28:33,082 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:28:33,082 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:29:04,499 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:29:04,500 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:29:04,501 - INFO - Tests Passed: 0/5
+2026-01-05 18:30:16,596 - INFO - Starting benchmark test
+2026-01-05 18:30:18,014 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:30:18,014 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:30:49,280 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:30:49,281 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:31:20,355 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:31:20,356 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:31:51,374 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:31:51,374 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:32:22,646 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 18:32:22,646 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 18:32:22,647 - INFO - Tests Passed: 0/5
+2026-01-05 18:33:34,744 - INFO - Starting benchmark test
+2026-01-05 18:33:36,119 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:33:36,120 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:34:07,511 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:34:07,512 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:34:39,051 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:34:39,051 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:35:10,184 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:35:10,184 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:36:04,976 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 18:36:04,980 - INFO - Starting benchmark test
+2026-01-05 18:36:17,846 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:36:17,847 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:37:00,517 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:37:00,518 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:37:43,239 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 18:37:43,239 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:38:25,871 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 18:38:25,872 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:43:31,835 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 18:43:31,838 - INFO - Starting benchmark test
+2026-01-05 18:43:44,369 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:43:44,370 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:44:27,108 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:44:27,109 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:45:33,396 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 18:45:33,399 - INFO - Starting benchmark test
+2026-01-05 18:45:45,943 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 18:45:45,943 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:46:28,917 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 18:46:28,918 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:56:12,034 - INFO - Benchmark scheduler started - running every 0.02 hours
+2026-01-05 18:56:12,038 - INFO - Starting benchmark test
+2026-01-05 18:56:18,142 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 18:56:18,143 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:56:54,972 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 18:56:54,973 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:57:31,676 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 18:57:31,676 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:58:09,939 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-05 18:58:09,940 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 18:58:46,551 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-05 18:58:46,551 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-05 18:58:46,552 - INFO - Tests Passed: 5/5
+2026-01-05 18:59:58,584 - INFO - Starting benchmark test
+2026-01-05 19:00:04,208 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 19:00:04,209 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:00:40,027 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 19:00:40,028 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:01:17,438 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 19:01:17,439 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:01:59,456 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:01:59,460 - INFO - Starting benchmark test
+2026-01-05 19:02:05,949 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 19:02:05,950 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:07:11,462 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:07:11,465 - INFO - Starting benchmark test
+2026-01-05 19:07:15,214 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 19:07:15,215 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:07:46,632 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 19:07:46,633 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:08:17,930 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 19:08:17,930 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:08:49,422 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 19:08:49,422 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:09:20,760 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 19:09:20,761 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 19:09:20,762 - INFO - Tests Passed: 0/5
+2026-01-05 19:11:09,366 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:11:09,394 - INFO - Starting benchmark test
+2026-01-05 19:12:06,014 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:12:45,822 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:16:49,465 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:17:26,338 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:18:23,173 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:18:56,146 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:19:56,171 - INFO - Starting benchmark test
+2026-01-05 19:19:58,098 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 19:19:58,098 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:20:29,435 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 19:20:29,436 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:21:00,811 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 19:21:00,812 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:21:32,211 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 19:21:32,212 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:22:03,682 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 19:22:03,683 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 19:22:03,684 - INFO - Tests Passed: 0/5
+2026-01-05 19:38:46,920 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:38:46,935 - INFO - Starting benchmark test
+2026-01-05 19:39:20,741 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:40:20,762 - INFO - Starting benchmark test
+2026-01-05 19:40:21,885 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 19:40:21,886 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:41:25,520 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:41:53,489 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 19:42:53,517 - INFO - Starting benchmark test
+2026-01-05 19:42:54,586 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 19:42:54,587 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:43:26,011 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 19:43:26,012 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:43:57,053 - INFO - Test 3: Expected='Repair Estimates', Predicted='Error', Exact=FAIL, Semantic=0.203, Result=FAIL
+2026-01-05 19:43:57,054 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:44:28,089 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 19:44:28,090 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 19:44:59,135 - INFO - Test 5: Expected='Medical Records', Predicted='Error', Exact=FAIL, Semantic=0.229, Result=FAIL
+2026-01-05 19:44:59,136 - INFO - BENCHMARK RESULTS - Classification Accuracy: 0.0%
+2026-01-05 19:44:59,137 - INFO - Tests Passed: 0/5
+2026-01-05 21:16:29,611 - INFO - Starting benchmark test
+2026-01-05 21:16:30,613 - INFO - Test 1: Expected='Police Reports', Predicted='Error', Exact=FAIL, Semantic=0.355, Result=FAIL
+2026-01-05 21:16:30,614 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:17:01,920 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 21:17:01,920 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:18:15,462 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 21:19:15,484 - INFO - Starting benchmark test
+2026-01-05 21:19:21,094 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 21:19:21,095 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:19:58,129 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 21:19:58,130 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:20:43,196 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 21:20:43,196 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:21:18,918 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/plea agreements, sanctions, and terms negotiated between parties involved in disputes', Exact=FAIL, Semantic=0.685, Result=FAIL
+2026-01-05 21:21:18,919 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:21:55,482 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-05 21:21:55,483 - INFO - BENCHMARK RESULTS - Classification Accuracy: 80.0%
+2026-01-05 21:21:55,485 - INFO - Tests Passed: 4/5
+2026-01-05 21:32:59,709 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 21:34:00,330 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 21:39:00,382 - INFO - Starting benchmark test
+2026-01-05 21:39:07,159 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 21:39:07,160 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:39:41,432 - INFO - Test 2: Expected='Proof of Loss', Predicted='Error', Exact=FAIL, Semantic=0.292, Result=FAIL
+2026-01-05 21:39:41,433 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:40:17,849 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 21:40:17,850 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:40:49,645 - INFO - Test 4: Expected='Legal Documents', Predicted='Error', Exact=FAIL, Semantic=0.201, Result=FAIL
+2026-01-05 21:40:49,646 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:41:28,763 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-05 21:41:28,764 - INFO - BENCHMARK RESULTS - Classification Accuracy: 60.0%
+2026-01-05 21:41:28,765 - INFO - Tests Passed: 3/5
+2026-01-05 21:43:50,490 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 21:45:50,520 - INFO - Starting benchmark test
+2026-01-05 21:45:57,218 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 21:45:57,219 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:46:33,682 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 21:46:33,682 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:47:10,849 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 21:47:10,851 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:47:48,488 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-05 21:47:48,489 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:48:28,704 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-05 21:48:28,705 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-05 21:48:28,706 - INFO - Tests Passed: 5/5
+2026-01-05 21:51:03,569 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-05 21:53:03,598 - INFO - Starting benchmark test
+2026-01-05 21:53:09,623 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-05 21:53:09,623 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:53:46,725 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-05 21:53:46,725 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:54:22,616 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-05 21:54:22,616 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:54:58,366 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-05 21:54:58,367 - INFO - Waiting 30 seconds before next test case...
+2026-01-05 21:55:35,314 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-05 21:55:35,315 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-05 21:55:35,317 - INFO - Tests Passed: 5/5
+2026-01-05 22:01:30,295 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-06 10:00:21,784 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-06 10:00:21,817 - INFO - Starting benchmark test
+2026-01-06 10:00:30,882 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-06 10:00:30,884 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 10:01:06,625 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-06 10:01:06,627 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 10:01:43,289 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-06 10:01:43,289 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 10:02:19,811 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-06 10:02:19,812 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 10:02:56,879 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-06 10:02:56,879 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-06 10:02:56,880 - INFO - Tests Passed: 5/5
+2026-01-06 14:36:34,676 - INFO - Starting benchmark test
+2026-01-06 14:36:41,953 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-06 14:36:41,954 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:37:21,425 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-06 14:37:21,426 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:37:57,703 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-06 14:37:57,704 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:38:34,786 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-06 14:38:34,787 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:39:11,518 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-06 14:39:11,520 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-06 14:39:11,521 - INFO - Tests Passed: 5/5
+2026-01-06 14:50:16,630 - INFO - Benchmark scheduler started - running every 5.0 hours
+2026-01-06 14:52:16,665 - INFO - Starting benchmark test
+2026-01-06 14:52:23,964 - INFO - Test 1: Expected='Police Reports', Predicted='Police Reports', Exact=PASS, Semantic=1.000, Result=PASS
+2026-01-06 14:52:23,964 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:52:59,834 - INFO - Test 2: Expected='Proof of Loss', Predicted='First Notice of Loss (FNOL)', Exact=FAIL, Semantic=0.766, Result=PASS
+2026-01-06 14:52:59,835 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:53:37,457 - INFO - Test 3: Expected='Repair Estimates', Predicted='Repair Estimates and Invoices', Exact=FAIL, Semantic=0.787, Result=PASS
+2026-01-06 14:53:37,458 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:54:14,179 - INFO - Test 4: Expected='Legal Documents', Predicted='Settlement/Plea Agreements', Exact=FAIL, Semantic=0.790, Result=PASS
+2026-01-06 14:54:14,179 - INFO - Waiting 30 seconds before next test case...
+2026-01-06 14:54:49,850 - INFO - Test 5: Expected='Medical Records', Predicted='Medical Bills', Exact=FAIL, Semantic=1.000, Result=PASS
+2026-01-06 14:54:49,850 - INFO - BENCHMARK RESULTS - Classification Accuracy: 100.0%
+2026-01-06 14:54:49,851 - INFO - Tests Passed: 5/5

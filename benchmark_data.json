@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "text": "POLICE INCIDENT REPORT - Case #12345. On March 15, 2024, at approximately 2:30 PM, officers responded to a motor vehicle accident at the intersection of Main St and Oak Ave. Officer badge #4567 documented the scene.",
+    "expected_doc_type": "Police Reports"
+  },
+  {
+    "id": 2,
+    "text": "FIRST NOTICE OF LOSS. Policy Number: ABC123456. Date of loss: 03/15/2024. Claim number: CL789. I hereby provide notice that damage occurred to my insured property. Claimant signature required.",
+    "expected_doc_type": "Proof of Loss"
+  },
+  {
+    "id": 3,
+    "text": "ESTIMATE FOR VEHICLE REPAIR. Labor costs: $850. Parts: $1,200. Total cost: $2,050. Service provider: ABC Auto Repair. Invoice #INV-2024-001.",
+    "expected_doc_type": "Repair Estimates"
+  },
+  {
+    "id": 4,
+    "text": "SETTLEMENT AGREEMENT. This legal proceeding settlement is entered into between parties. Attorney John Smith represents the plaintiff in this court order matter.",
+    "expected_doc_type": "Legal Documents"
+  },
+  {
+    "id": 5,
+    "text": "MEDICAL RECORD - Patient: Jane Doe. Diagnosis: Whiplash injury. Treatment provided by physician Dr. Smith at City Hospital. Medical history shows previous injuries. Prescription: Pain medication.",
+    "expected_doc_type": "Medical Records"
+  }
+]
