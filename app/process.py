@@ -8,6 +8,7 @@ import shutil
 from app.llm import get_gemini_response_with_context
 from  app.sql import insert_document_log,get_doc_type_count,query_get_avg_processing_time,get_recent_documents,get_source_options,get_details_by_id,update_document_by_id,delete_document_by_id
 from app.extraction import operation
+from app.benchmark import start_benchmarking, run_manual_benchmark
 # from app.email_func import send_email_notification
 from typing import Optional, List
 from fastapi.middleware.cors import CORSMiddleware
@@ -58,10 +59,29 @@ logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 logger.setLevel(logging.INFO)
 
-# Prometheus metrics
-REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP requests', ['method', 'endpoint'])
-PROCESSING_TIME = Histogram('document_processing_seconds', 'Document processing time')
-DOCUMENT_COUNT = Counter('documents_processed_total', 'Total documents processed', ['doc_type'])
+# Prometheus metrics - use try/except to avoid duplicate registration
+try:
+    REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP requests', ['method', 'endpoint'])
+    PROCESSING_TIME = Histogram('document_processing_seconds', 'Document processing time')
+    DOCUMENT_COUNT = Counter('documents_processed_total', 'Total documents processed', ['doc_type'])
+    
+    # AI-specific Prometheus metrics
+    AI_REQUEST_COUNT = Counter('ai_requests_total', 'Total AI requests', ['model', 'operation'])
+    AI_LATENCY = Histogram('ai_request_duration_seconds', 'AI request latency', ['model', 'operation'])
+    AI_TOKEN_COUNT = Counter('ai_tokens_total', 'Total AI tokens used', ['model', 'type'])
+    AI_ERROR_COUNT = Counter('ai_errors_total', 'Total AI errors', ['model', 'error_type'])
+    AI_CONFIDENCE_SCORE = Histogram('ai_confidence_score', 'AI model confidence scores', ['model', 'operation'])
+except ValueError:
+    # Metrics already registered, get existing ones
+    from prometheus_client import REGISTRY
+    REQUEST_COUNT = REGISTRY._names_to_collectors['http_requests_total']
+    PROCESSING_TIME = REGISTRY._names_to_collectors['document_processing_seconds']
+    DOCUMENT_COUNT = REGISTRY._names_to_collectors['documents_processed_total']
+    AI_REQUEST_COUNT = REGISTRY._names_to_collectors['ai_requests_total']
+    AI_LATENCY = REGISTRY._names_to_collectors['ai_request_duration_seconds']
+    AI_TOKEN_COUNT = REGISTRY._names_to_collectors['ai_tokens_total']
+    AI_ERROR_COUNT = REGISTRY._names_to_collectors['ai_errors_total']
+    AI_CONFIDENCE_SCORE = REGISTRY._names_to_collectors['ai_confidence_score']
 
 app.add_middleware(
     CORSMiddleware,
@@ -72,6 +92,9 @@ app.add_middleware(
 )
 UPLOAD_DIR = "uploaded_files"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+# Start benchmarking system
+start_benchmarking()
 
 def make_permalink(id):
    
@@ -223,8 +246,19 @@ def process_file(file_path, source, request_id=None):
         text_content = str(extracted_text)
     else:
         text_content = extracted_text
+    
+    # AI Classification with metrics tracking
+    ai_start_time = time.time()
+    AI_REQUEST_COUNT.labels(model='gemini', operation='classification').inc()
+    
+    try:
+        # Use actual AI call with metrics
+        doc_type, summary = get_gemini_response_with_context(text_content)
         
-    doc_type, summary = "other", text_content[:150]
+    except Exception as e:
+        AI_ERROR_COUNT.labels(model='gemini', error_type=type(e).__name__).inc()
+        doc_type, summary = "error", "Classification failed"
+        
     processing_time_ms = int((time.time() - start_time) * 1000)
     full_path = os.path.abspath(file_path)
     
@@ -242,7 +276,7 @@ def process_file(file_path, source, request_id=None):
             "processing_time_ms": processing_time_ms,
             "file_size_bytes": os.path.getsize(file_path) if os.path.exists(file_path) else None,
             "extraction_method": "OCR",
-            "confidence_score": None
+            "confidence_score": confidence_score if 'confidence_score' in locals() else None
         }
     })
     
@@ -347,6 +381,59 @@ def metrics():
     """Prometheus metrics endpoint"""
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
+@app.get("/metrics/ai")
+def ai_metrics_json():
+    """AI metrics in JSON format"""
+    from prometheus_client import REGISTRY
+    
+    metrics_data = {
+        "ai_requests_total": {},
+        "ai_tokens_total": {},
+        "ai_errors_total": {},
+        "ai_request_duration_seconds": {},
+        "benchmark_metrics": {}
+    }
+    
+    # Collect AI metrics
+    for metric_name, metric in REGISTRY._names_to_collectors.items():
+        if metric_name.startswith('ai_'):
+            if hasattr(metric, '_value'):
+                # Counter/Gauge
+                if hasattr(metric, '_labelnames') and metric._labelnames:
+                    # Has labels
+                    metric_values = {}
+                    for sample in metric.collect()[0].samples:
+                        label_key = '_'.join([f"{k}={v}" for k, v in zip(metric._labelnames, sample.labels)])
+                        metric_values[label_key] = sample.value
+                    metrics_data[metric_name] = metric_values
+                else:
+                    # No labels
+                    metrics_data[metric_name] = metric._value._value
+            elif hasattr(metric, '_sum'):
+                # Histogram
+                samples = list(metric.collect()[0].samples)
+                histogram_data = {}
+                for sample in samples:
+                    if sample.name.endswith('_sum'):
+                        histogram_data['sum'] = sample.value
+                    elif sample.name.endswith('_count'):
+                        histogram_data['count'] = sample.value
+                metrics_data[metric_name] = histogram_data
+        
+        # Collect benchmark metrics
+        elif metric_name.startswith('benchmark_'):
+            if hasattr(metric, '_value'):
+                if hasattr(metric, '_labelnames') and metric._labelnames:
+                    metric_values = {}
+                    for sample in metric.collect()[0].samples:
+                        label_key = '_'.join([f"{k}={v}" for k, v in zip(metric._labelnames, sample.labels)])
+                        metric_values[label_key] = sample.value
+                    metrics_data["benchmark_metrics"][metric_name] = metric_values
+                else:
+                    metrics_data["benchmark_metrics"][metric_name] = metric._value._value
+    
+    return metrics_data
+
 @app.get("/logs")
 def get_logs(lines: int = 100):
     """Get recent application logs"""
@@ -356,6 +443,31 @@ def get_logs(lines: int = 100):
         return {"logs": log_lines[-lines:]}
     except FileNotFoundError:
         return {"logs": ["No log file found"]}
+
+@app.get("/benchmark/run")
+def run_benchmark():
+    """Run benchmark test manually"""
+    run_manual_benchmark()
+    return {"message": "Benchmark test completed. Check benchmark.log for results."}
+
+@app.get("/benchmark/results")
+def get_benchmark_results():
+    """Get all benchmark results"""
+    try:
+        with open('benchmark_results.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"message": "No benchmark results found"}
+
+@app.get("/benchmark/results/latest")
+def get_latest_benchmark_results():
+    """Get latest benchmark results only"""
+    try:
+        with open('benchmark_results.json', 'r') as f:
+            all_results = json.load(f)
+            return all_results[-1] if all_results else {"message": "No results found"}
+    except FileNotFoundError:
+        return {"message": "No benchmark results found"}
 
 """@app.get("/view_document/{file_id}")
 def view_document(file_id: int):
@@ -403,8 +515,11 @@ def view_document(file_id: int):
             os.rename(converted_file, output_pdf_path)
 
         elif ext in [".msg", ".eml"]:
-            # Convert email files → PDF (via pandoc)
-            pypandoc.convert_file(file_path, "pdf", outputfile=output_pdf_path)
+            # Convert email files using existing functions
+            if ext == ".msg":
+                output_pdf_path = convert_msg_to_pdf(file_path)
+            else:
+                output_pdf_path = convert_eml_to_pdf(file_path)
 
         else:
             raise HTTPException(status_code=400, detail=f"Unsupported file type: {ext}")

@@ -24,20 +24,21 @@ from email.parser import BytesParser
 from app import process
 from PyPDF2 import PdfReader
 import google.generativeai as genai  
-def get_gemini_response(user_message):
+
+# def get_gemini_response(user_message):
     
-    try:
-        genai.configure(api_key='AIzaSyDiB4eEW2OLHKyAIQaBHfsGPaEnCwCeLH4')
-        model = genai.GenerativeModel('gemini-2.5-flash')  # Ensure the model name is correct
-        response = model.generate_content(f"You are a helpful assistant. User: {user_message}")
-        if response and hasattr(response, 'candidates') and len(response.candidates) > 0:
-            answer = response.candidates[0].content.parts[0].text
-            return answer
-        else:
-            return "Sorry, I couldn't get a response from Gemini. Please try again."
-    except Exception as e:
+#     try:
+#         genai.configure(api_key='AIza')
+#         model = genai.GenerativeModel('gemini-2.5-flash')  # Ensure the model name is correct
+#         response = model.generate_content(f"You are a helpful assistant. User: {user_message}")
+#         if response and hasattr(response, 'candidates') and len(response.candidates) > 0:
+#             answer = response.candidates[0].content.parts[0].text
+#             return answer
+#         else:
+#             return "Sorry, I couldn't get a response from Gemini. Please try again."
+#     except Exception as e:
         
-        return f"Error: {str(e)}"
+#         return f"Error: {str(e)}"
 
 
 

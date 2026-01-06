@@ -2,22 +2,101 @@ import google.generativeai as genai
 import pandas as pd
 from dotenv import load_dotenv
 import os
+import time
+from prometheus_client import Counter, Histogram
+
+# API rotation state
+CURRENT_API_INDEX = 0
+API_KEYS = []
+
+# Load API keys on module import
+def load_api_keys():
+    global API_KEYS
+    env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+    load_dotenv(env_path)
+    
+    keys = []
+    for i in range(1, 10):  # Check for up to 10 API keys
+        key_name = f"Gemini_api_key_{i}" if i > 1 else "Gemini_api_key"
+        key = os.environ.get(key_name)
+        if key:
+            keys.append(key)
+    
+    API_KEYS = keys
+    return keys
+
+def get_next_api_key():
+    global CURRENT_API_INDEX
+    if not API_KEYS:
+        load_api_keys()
+    
+    if not API_KEYS:
+        return None
+    
+    key = API_KEYS[CURRENT_API_INDEX]
+    CURRENT_API_INDEX = (CURRENT_API_INDEX + 1) % len(API_KEYS)
+    return key
+
+# Initialize API keys
+load_api_keys()
+
+# AI metrics - use try/except to avoid duplicate registration
+try:
+    AI_REQUEST_COUNT = Counter('ai_requests_total', 'Total AI requests', ['model', 'operation'])
+    AI_LATENCY = Histogram('ai_request_duration_seconds', 'AI request latency', ['model', 'operation'])
+    AI_TOKEN_COUNT = Counter('ai_tokens_total', 'Total AI tokens used', ['model', 'type'])
+    AI_ERROR_COUNT = Counter('ai_errors_total', 'Total AI errors', ['model', 'error_type'])
+    AI_CONFIDENCE_SCORE = Histogram('ai_confidence_score', 'AI model confidence scores', ['model', 'operation'])
+except ValueError:
+    # Metrics already registered, get existing ones
+    from prometheus_client import REGISTRY
+    AI_REQUEST_COUNT = REGISTRY._names_to_collectors['ai_requests_total']
+    AI_LATENCY = REGISTRY._names_to_collectors['ai_request_duration_seconds']
+    AI_TOKEN_COUNT = REGISTRY._names_to_collectors['ai_tokens_total']
+    AI_ERROR_COUNT = REGISTRY._names_to_collectors['ai_errors_total']
+    AI_CONFIDENCE_SCORE = REGISTRY._names_to_collectors['ai_confidence_score']
 # doc_types=pd.read_excel("Doc_type field configuration.xlsx",sheet_name="doc_types")["doc_types"].tolist()  
 def get_gemini_response(user_message):
+    start_time = time.time()
+    AI_REQUEST_COUNT.labels(model='gemini', operation='general').inc()
     
     try:
-        load_dotenv()
-        api=os.environ.get("GENAI_API_KEY")
+        print("DEBUG: Loading .env file...")
+        # Load .env from parent directory since we're in app/ folder
+        env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+        print(f"DEBUG: Looking for .env at: {env_path}")
+        load_dotenv(env_path)
+        print(f"DEBUG: Current working directory: {os.getcwd()}")
+        api=os.environ.get("Gemini_api_key")
+        print(f"DEBUG: API key loaded: {'Yes' if api else 'No'}")
+        print(f"DEBUG: API key length: {len(api) if api else 0}")
+        if not api:
+            print("DEBUG: Available environment variables:")
+            for key in os.environ.keys():
+                if 'gemini' in key.lower() or 'api' in key.lower():
+                    print(f"  {key}")
         genai.configure(api_key=api)
-        model = genai.GenerativeModel('gemini-2.5-flash')  # Ensure the model name is correct
+        model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(f"You are a helpful assistant. User: {user_message}")
+        
+        # Track metrics
+        latency = time.time() - start_time
+        print(latency)
+        AI_LATENCY.labels(model='gemini', operation='general').observe(latency)
+        
         if response and hasattr(response, 'candidates') and len(response.candidates) > 0:
             answer = response.candidates[0].content.parts[0].text
+            
+            # Track token usage
+            if hasattr(response, 'usage_metadata'):
+                AI_TOKEN_COUNT.labels(model='gemini', type='input').inc(response.usage_metadata.prompt_token_count)
+                AI_TOKEN_COUNT.labels(model='gemini', type='output').inc(response.usage_metadata.candidates_token_count)
+            
             return answer
         else:
             return "Sorry, I couldn't get a response from Gemini. Please try again."
     except Exception as e:
-        
+        AI_ERROR_COUNT.labels(model='gemini', error_type=type(e).__name__).inc()
         return f"Error: {str(e)}"
 
 def extract_sql_query(text):
@@ -29,7 +108,8 @@ def extract_sql_query(text):
 
    
 def get_gemini_response_with_context(text):
-    
+    start_time = time.time()
+    AI_REQUEST_COUNT.labels(model='gemini', operation='classification').inc()
     
     question_prompt_1=f"""You are an expert document classifier for insurance claims processing. Your task is to classify documents based solely on their textual content and meaning.
 
@@ -133,80 +213,71 @@ Document Text:
 Based on the content analysis, classify this document as one of the specific document types listed above. Return only the exact document type name (e.g., "Police Reports", "First Notice of Loss (FNOL)", "Repair Estimates and Invoices", etc.).
 
 **Classification Result:**"""
-#     question_prompt_1 = f"""
-# Document Types for Claims Classification:
-# - Policy Documents: Coverage terms, conditions, exclusions, and endorsements.
-# - Proof of Loss Documents: Signed declarations certifying extent and nature of loss/damage.
-# - Insurance Certificates: Proof that coverage was in place for the claimed event.
-# - Other: Any other relevant documents that do not fit the above categories.
-
-# Given a document's text, classify it as one of the above types *only based on its content and meaning. Do not classify based on the file name or any other metadata*. If the document does not fit any of the above types, classify it as "Other".
-
-# Examples:
-# Document text: "This is a police report regarding an auto accident on 5th Ave."
-# Output: Police Reports
-
-# Document text: "The following invoice is for repairs to the insured vehicle."
-# Output: Repair Estimates and Invoices
-
-# Document text:
-# {text}
-
-# What is the most appropriate document type for the above text? Return only the document type name from the list above.
-# """
-    # context = """
-    # Document Types for Claims Classification:
-
-    # - Policy Documents: Coverage terms, conditions, exclusions, and endorsements.
-    # - Proof of Loss Documents: Signed declarations certifying extent and nature of loss/damage.
-    # - Insurance Certificates: Proof that coverage was in place for the claimed event.
-    # - First Notice of Loss (FNOL) Documents: Initial claim reports describing incident, damages, and parties.
-    # - Customer Communications: Correspondence from claimants (emails, letters, forms) with claim info.
-    # - Investigation Reports: Findings on liability, fraud, or root cause.
-    # - Vehicle Reports: Estimates, photos, invoices, registrations, or dealership loss docs for vehicles.
-    # - ISO Match Reports: Similarity analysis between submitted docs and ISO database records.
-    # - Property Reports: Repair estimates, property forms, photos, or living expense forms.
-    # - Fraud Investigation Reports: Reports on suspicious activities or potential fraud.
-    # - Adjuster Reports: Assessments, interviews, and recommendations by adjusters.
-    # - Police Reports: Law enforcement reports on accidents, thefts, or incidents.
-    # - Arbitration: Documents on dispute resolution outside court by a neutral arbitrator.
-    # - Summons: Official notifications for legal appearances or actions.
-    # - Legal and Demand Letters: Demand letters, court orders, subpoenas related to claims.
-    # - Power of Attorney: Authorization for one person to act on behalf of another.
-    # - Demand Packets: Formal requests for payment/action, outlining obligations and deadlines.
-    # - Settlement Agreements: Agreements on settlement amounts/terms between parties.
-    # - Medical Bills: Records of treatments, diagnoses, and bills for bodily injury claims.
-    # - Explanation of Review (EOR): Concise analysis or justification of feedback.
-    # - Authorizations: Granting or denying access to resources/actions.
-    # - Repair Estimates and Invoices: Estimates/invoices for repairs by service providers.
-    # - Claims Reserves and Payment Records: Records of claim reserves and payments.
-    # - Subrogation and Recovery Documents: Docs for insurer recovery from responsible third parties.
-    # - Photographs and Videos: Visual evidence of damages, scenes, or property.
-    # - Appraisal Reports: Value assessments for property, vehicles, or insured items.
-    # - Vendor Reports: Service provider/vendor reports on repairs or completed work.
-    # - Other: Any other relevant documents that do not fit the above categories.
-
-    # Given a document's text, classify it as one of the above types *only based on its content and meaning. DO not classify based on the file name or any other metadata*. If the document does not fit any of the above types, classify it as "Other".
-    # """
-
-    # question_prompt_1 = f"""{context}
-
-    # Document text:
-    # {text}
-
-    # What is the most appropriate document type for the above text? Return only the document type name from the documents attached.
-    # """
-    # question_prompt_1 = f"""\n
-    # data:{text}."""
-    question_prompt_2=f""" You are an summarizer agent please provide the overall summary of the below attached body without missing important and vital information such as names,dates, events and any kind of document IDs.Do not add preamble as i have to feed the data into another file\n
-    data:{text}"""
-    response_1 = get_gemini_response(question_prompt_1)
-    response_2 = get_gemini_response(question_prompt_2)
-    response_1 = extract_sql_query(response_1)
-    response_2 = extract_sql_query(response_2)
     
-    # Remove any leading or trailing single quotes
-    print(response_1,response_2)
-    predicted_doc_type,summary=response_1,response_2
+    summary_prompt = f"""Provide a concise 2-3 sentence summary of this document focusing on the key information and purpose:
+
+{text}
+
+Summary:"""
     
-    return predicted_doc_type, summary
+    # Try each API key until one works
+    for attempt in range(len(API_KEYS) if API_KEYS else 1):
+        try:
+            api = get_next_api_key()
+            if not api:
+                return "Error", "No API keys available"
+                
+            genai.configure(api_key=api)
+            model = genai.GenerativeModel('gemini-2.5-flash')
+            
+            # Get classification
+            classification_response = model.generate_content(question_prompt_1)
+            # Get summary
+            summary_response = model.generate_content(summary_prompt)
+            
+            # Track metrics
+            latency = time.time() - start_time
+            AI_LATENCY.labels(model='gemini', operation='classification').observe(latency)
+            
+            doc_type = "Other"
+            summary = "Unable to generate summary"
+            
+            if classification_response and hasattr(classification_response, 'candidates') and len(classification_response.candidates) > 0:
+                doc_type = classification_response.candidates[0].content.parts[0].text.strip()
+                
+                # Track classification tokens
+                if hasattr(classification_response, 'usage_metadata'):
+                    AI_TOKEN_COUNT.labels(model='gemini', type='prediction_input').inc(classification_response.usage_metadata.prompt_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='prediction_output').inc(classification_response.usage_metadata.candidates_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='total_input').inc(classification_response.usage_metadata.prompt_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='total_output').inc(classification_response.usage_metadata.candidates_token_count)
+            
+            if summary_response and hasattr(summary_response, 'candidates') and len(summary_response.candidates) > 0:
+                summary = summary_response.candidates[0].content.parts[0].text.strip()
+                
+                # Track summary tokens
+                if hasattr(summary_response, 'usage_metadata'):
+                    AI_TOKEN_COUNT.labels(model='gemini', type='summary_input').inc(summary_response.usage_metadata.prompt_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='summary_output').inc(summary_response.usage_metadata.candidates_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='total_input').inc(summary_response.usage_metadata.prompt_token_count)
+                    AI_TOKEN_COUNT.labels(model='gemini', type='total_output').inc(summary_response.usage_metadata.candidates_token_count)
+            
+            return doc_type, summary
+            
+        except Exception as e:
+            error_msg = str(e).lower()
+            # Check if it's a rate limit error
+            if 'quota' in error_msg or 'rate limit' in error_msg or 'exceeded' in error_msg:
+                print(f"API key {attempt + 1} hit rate limit, trying next key...")
+                AI_ERROR_COUNT.labels(model='gemini', error_type='RateLimit').inc()
+                continue
+            else:
+                # Other error, return immediately
+                AI_ERROR_COUNT.labels(model='gemini', error_type=type(e).__name__).inc()
+                return "Error", f"Classification failed: {str(e)}"
+    
+    # All API keys exhausted
+    return "Error", "All API keys have exceeded their limits"
+    
+if __name__ == "__main__":
+    get_gemini_response_with_context("FIRST NOTICE OF LOSS. Policy Number: ABC123456. Date of loss: 03/15/2024. Claim number: CL789. I hereby provide notice that damage occurred to my insured property. Claimant signature required.")
