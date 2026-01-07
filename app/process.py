@@ -18,6 +18,8 @@ import logging
 import json
 from datetime import datetime
 import uuid
+import json
+from prometheus_client import REGISTRY
 
 app = FastAPI()
 
@@ -26,6 +28,7 @@ class JSONFormatter(logging.Formatter):
     def format(self, record):
         log_entry = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
+            "epoch_timestamp": int(time.time()),
             "level": record.levelname,
             "logger": record.name,
             "message": record.getMessage(),
@@ -39,20 +42,18 @@ class JSONFormatter(logging.Formatter):
 
 logging.basicConfig(
     level=logging.INFO,
-    handlers=[
-        logging.FileHandler('app.log'),
-        logging.StreamHandler()
-    ]
+    handlers=[]
 )
 
-# Set JSON formatter for file handler
+# Create and configure file handler with JSON formatter
 file_handler = logging.FileHandler('app.log')
 file_handler.setFormatter(JSONFormatter())
 
-# Keep simple format for console
+# Create and configure console handler with simple format
 console_handler = logging.StreamHandler()
 console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 
+# Configure logger
 logger = logging.getLogger(__name__)
 logger.handlers.clear()
 logger.addHandler(file_handler)
@@ -73,7 +74,7 @@ try:
     AI_CONFIDENCE_SCORE = Histogram('ai_confidence_score', 'AI model confidence scores', ['model', 'operation'])
 except ValueError:
     # Metrics already registered, get existing ones
-    from prometheus_client import REGISTRY
+    
     REQUEST_COUNT = REGISTRY._names_to_collectors['http_requests_total']
     PROCESSING_TIME = REGISTRY._names_to_collectors['document_processing_seconds']
     DOCUMENT_COUNT = REGISTRY._names_to_collectors['documents_processed_total']
@@ -381,66 +382,65 @@ def metrics():
     """Prometheus metrics endpoint"""
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
-@app.get("/metrics/ai")
-def ai_metrics_json():
-    """AI metrics in JSON format"""
-    from prometheus_client import REGISTRY
-    
+@app.get("/json_metrics")
+def registry_to_json():
+    """AI and system metrics in JSON format with timestamps"""
+    current_time = time.time()
     metrics_data = {
-        "ai_requests_total": {},
-        "ai_tokens_total": {},
-        "ai_errors_total": {},
-        "ai_request_duration_seconds": {},
-        "benchmark_metrics": {}
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "epoch_timestamp": int(current_time),
+        "metrics": [],
+        "prometheus_queries": {
+            "average_latency": "rate(ai_request_duration_seconds_sum[5m]) / rate(ai_request_duration_seconds_count[5m])",
+            "p95_latency": "histogram_quantile(0.95, rate(ai_request_duration_seconds_bucket[5m]))",
+            "p99_latency": "histogram_quantile(0.99, rate(ai_request_duration_seconds_bucket[5m]))",
+            "request_rate": "rate(ai_requests_total[5m])",
+            "error_rate": "rate(ai_errors_total[5m]) / rate(ai_requests_total[5m])"
+        }
     }
-    
-    # Collect AI metrics
-    for metric_name, metric in REGISTRY._names_to_collectors.items():
-        if metric_name.startswith('ai_'):
-            if hasattr(metric, '_value'):
-                # Counter/Gauge
-                if hasattr(metric, '_labelnames') and metric._labelnames:
-                    # Has labels
-                    metric_values = {}
-                    for sample in metric.collect()[0].samples:
-                        label_key = '_'.join([f"{k}={v}" for k, v in zip(metric._labelnames, sample.labels)])
-                        metric_values[label_key] = sample.value
-                    metrics_data[metric_name] = metric_values
-                else:
-                    # No labels
-                    metrics_data[metric_name] = metric._value._value
-            elif hasattr(metric, '_sum'):
-                # Histogram
-                samples = list(metric.collect()[0].samples)
-                histogram_data = {}
-                for sample in samples:
-                    if sample.name.endswith('_sum'):
-                        histogram_data['sum'] = sample.value
-                    elif sample.name.endswith('_count'):
-                        histogram_data['count'] = sample.value
-                metrics_data[metric_name] = histogram_data
-        
-        # Collect benchmark metrics
-        elif metric_name.startswith('benchmark_'):
-            if hasattr(metric, '_value'):
-                if hasattr(metric, '_labelnames') and metric._labelnames:
-                    metric_values = {}
-                    for sample in metric.collect()[0].samples:
-                        label_key = '_'.join([f"{k}={v}" for k, v in zip(metric._labelnames, sample.labels)])
-                        metric_values[label_key] = sample.value
-                    metrics_data["benchmark_metrics"][metric_name] = metric_values
-                else:
-                    metrics_data["benchmark_metrics"][metric_name] = metric._value._value
-    
+
+    for metric_family in REGISTRY.collect():
+        family_info = {
+            "name": metric_family.name,
+            "documentation": metric_family.documentation,
+            "type": metric_family.type,
+            "samples": []
+        }
+
+        for sample in metric_family.samples:
+            family_info["samples"].append({
+                "name": sample.name,
+                "labels": sample.labels,
+                "value": sample.value,
+                "timestamp": sample.timestamp if sample.timestamp else current_time
+            })
+
+        metrics_data["metrics"].append(family_info)
+
     return metrics_data
 
 @app.get("/logs")
 def get_logs(lines: int = 100):
-    """Get recent application logs"""
+    """Get recent application logs with JSON parsing"""
     try:
         with open('app.log', 'r') as f:
             log_lines = f.readlines()
-        return {"logs": log_lines[-lines:]}
+        
+        # Parse JSON logs and add readable timestamp
+        parsed_logs = []
+        for line in log_lines[-lines:]:
+            try:
+                log_entry = json.loads(line.strip())
+                parsed_logs.append(log_entry)
+            except json.JSONDecodeError:
+                # Fallback for non-JSON lines
+                parsed_logs.append({"raw_log": line.strip(), "timestamp": None})
+        
+        return {
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "total_logs": len(parsed_logs),
+            "logs": parsed_logs
+        }
     except FileNotFoundError:
         return {"logs": ["No log file found"]}
 
