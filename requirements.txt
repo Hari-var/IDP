@@ -17,3 +17,4 @@ beautifulsoup4
 docx2txt
 PyMuPDF
 pypandoc
+pyodbc
