@@ -1,0 +1,69 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+app.log
+benchmark.log
+
+# Data and cache files
+*.db
+synthetic.db
+.env
+.env.example
+
+# Uploaded files and temporary directories
+uploaded_files/
+msg_attachments/
+Screens/
+Files/
+
+# Benchmark and test files
+benchmark_data.json
+benchmark_results.json
+last_benchmark_run.txt
+tests.txt
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+prometheus.md
+prometheus_queries.md
+
+# Configuration files (keep only what's needed in container)
+prompt.txt
+
+# Test and development files
+pie_chart_component.html
+ProcessingTimeBarChart.html
+DocTypesPieChart.jsx
+logs_endpoint.py
+read_excel.ipynb

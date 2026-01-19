@@ -1,0 +1,52 @@
+[
+  {
+    "id": 6,
+    "text": "POLICY DECLARATION PAGE. Policy number: POL123456. Coverage limits: $100,000. Deductible: $500. Premium: $1,200 annually. Policyholder: John Smith. Effective date: 01/01/2024. Terms and conditions apply.",
+    "expected_doc_type": "Policy Documents"
+  },
+  {
+    "id": 7,
+    "text": "INVESTIGATION FINDINGS REPORT. Analysis of the incident shows liability determination favors the insured. Evidence review completed. Assessment indicates no fraud detected.",
+    "expected_doc_type": "Investigation Reports"
+  },
+  {
+    "id": 8,
+    "text": "SUBPOENA - Court order requiring appearance. Legal proceeding scheduled for May 15, 2024. Attorney representation required. Power of attorney documents attached.",
+    "expected_doc_type": "Legal Documents"
+  },
+  {
+    "id": 9,
+    "text": "REPAIR INVOICE - Service provider: Metro Garage. Labor costs breakdown: $400 engine repair, $200 brake service. Parts cost: $150. Total repair cost: $750.",
+    "expected_doc_type": "Repair Estimates"
+  },
+  {
+    "id": 10,
+    "text": "INCIDENT REPORT filed by police department. Case number: 2024-5678. Citation issued for traffic violation. No arrests made at the scene.",
+    "expected_doc_type": "Police Reports"
+  },
+  {
+    "id": 11,
+    "text": "NOTICE OF LOSS submitted for claim number CL-2024-999. Date of loss: April 10, 2024. Extent of damage: Total loss of vehicle. Sworn statement attached with claimant signature.",
+    "expected_doc_type": "Proof of Loss"
+  },
+  {
+    "id": 12,
+    "text": "HOSPITAL DISCHARGE SUMMARY. Patient: Robert Johnson. Diagnosis: Fractured ribs. Treatment: Surgery and physical therapy. Physician: Dr. Anderson. Medical history reviewed. Prescription medications listed.",
+    "expected_doc_type": "Medical Records"
+  },
+  {
+    "id": 13,
+    "text": "INSURANCE POLICY TERMS AND CONDITIONS. Coverage limits detailed. Deductible amounts specified. Premium payment schedule. Policyholder responsibilities outlined. Effective date coverage begins.",
+    "expected_doc_type": "Policy Documents"
+  },
+  {
+    "id": 14,
+    "text": "FRAUD INVESTIGATION ANALYSIS. Evidence review indicates suspicious activity. Liability determination pending further investigation findings. Assessment recommends additional scrutiny.",
+    "expected_doc_type": "Investigation Reports"
+  },
+  {
+    "id": 15,
+    "text": "COURT ORDER for discovery proceedings. Attorney must provide documentation. Legal proceeding continues. Settlement negotiations ongoing.",
+    "expected_doc_type": "Legal Documents"
+  }
+  ]
