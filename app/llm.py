@@ -1,3 +1,4 @@
+from openai import AzureOpenAI
 import google.generativeai as genai 
 import pandas as pd
 from dotenv import load_dotenv
@@ -106,6 +107,49 @@ def extract_sql_query(text):
     else:
         return text
 
+def get_azure_response(text):
+    try:
+        endpoint = "https://defaultresourcegroup-ccan-resource-0475.cognitiveservices.azure.com/"
+        deployment = "gpt-4.1-mini-312634"
+        subscription_key = os.getenv("AZURE_AI_API_KEY")
+        api_version = "2024-12-01-preview"
+
+        if not subscription_key:
+            return "Error: AZURE_OPENAI_KEY not found in environment variables"
+
+        client = AzureOpenAI(
+            api_version=api_version,
+            azure_endpoint=endpoint,
+            api_key=subscription_key,
+        )
+
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant.",
+                },
+                {
+                    "role": "user",
+                    "content": text,
+                }
+            ],
+            max_tokens=1000,
+            temperature=0.7,
+            model=deployment
+        )
+
+        # Track Azure token usage
+        if hasattr(response, 'usage') and response.usage:
+            AI_TOKEN_COUNT.labels(model='azure', type='input').inc(response.usage.prompt_tokens)
+            AI_TOKEN_COUNT.labels(model='azure', type='output').inc(response.usage.completion_tokens)
+            AI_TOKEN_COUNT.labels(model='azure', type='total_input').inc(response.usage.prompt_tokens)
+            AI_TOKEN_COUNT.labels(model='azure', type='total_output').inc(response.usage.completion_tokens)
+
+        return response.choices[0].message.content
+    except Exception as e:
+        AI_ERROR_COUNT.labels(model='azure', error_type=type(e).__name__).inc()
+        return f"Azure Error: {str(e)}" 
    
 def get_gemini_response_with_context(text):
     start_time = time.time()
@@ -231,7 +275,8 @@ Summary:"""
             model = genai.GenerativeModel('gemini-2.5-flash')
             
             # Get classification
-            classification_response = model.generate_content(question_prompt_1)
+            classification_response = get_azure_response(question_prompt_1)
+            print(classification_response)
             # Get summary
             summary_response = model.generate_content(summary_prompt)
             
@@ -278,6 +323,6 @@ Summary:"""
     
     # All API keys exhausted
     return "Error", "All API keys have exceeded their limits"
-    
+   
 if __name__ == "__main__":
     get_gemini_response_with_context("FIRST NOTICE OF LOSS. Policy Number: ABC123456. Date of loss: 03/15/2024. Claim number: CL789. I hereby provide notice that damage occurred to my insured property. Claimant signature required.")
