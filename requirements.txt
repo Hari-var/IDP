@@ -1,4 +1,5 @@
 fastapi
+dotenv
 uvicorn
 python-multipart
 prometheus-client
