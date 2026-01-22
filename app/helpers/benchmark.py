@@ -3,11 +3,12 @@ import logging
 import time
 import threading
 from datetime import datetime
-from app.llm import get_gemini_response_with_context
+from app.helpers.llm import get_gemini_response_with_context
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import asyncio
 from prometheus_client import Counter, Histogram, Gauge
+from logging.handlers import RotatingFileHandler
 
 # Benchmark metrics
 try:
@@ -25,7 +26,11 @@ except ValueError:
 
 # Setup benchmark logger
 benchmark_logger = logging.getLogger('benchmark')
-benchmark_handler = logging.FileHandler('benchmark.log')
+benchmark_handler = RotatingFileHandler(
+    "benchmark.log",
+    maxBytes=10 * 1024 * 1024,  # 10 MB
+    backupCount=5
+)
 benchmark_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 benchmark_logger.addHandler(benchmark_handler)
 benchmark_logger.setLevel(logging.INFO)

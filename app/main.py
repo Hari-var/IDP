@@ -1,6 +1,6 @@
 import pandas as pd
 import time
-from llm import get_gemini_response_with_context
+from app.helpers.llm import get_gemini_response_with_context
 from sql import *
 import random
 import os

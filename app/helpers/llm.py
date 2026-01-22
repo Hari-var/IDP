@@ -40,7 +40,7 @@ def get_next_api_key():
 
 # Initialize API keys
 load_api_keys()
-
+load_dotenv()
 # AI metrics - use try/except to avoid duplicate registration
 try:
     AI_REQUEST_COUNT = Counter('ai_requests_total', 'Total AI requests', ['model', 'operation'])
@@ -111,7 +111,7 @@ def get_azure_response(text):
     try:
         endpoint = "https://defaultresourcegroup-ccan-resource-0475.cognitiveservices.azure.com/"
         deployment = "gpt-4.1-mini-312634"
-        subscription_key = os.getenv("AZURE_AI_API_KEY")
+        subscription_key = os.environ.get("AZURE_AI_API_KEY")
         api_version = "2024-12-01-preview"
 
         if not subscription_key:
@@ -256,7 +256,7 @@ Document Text:
 ## RESPONSE FORMAT:
 Based on the content analysis, classify this document as one of the specific document types listed above. Return only the exact document type name (e.g., "Police Reports", "First Notice of Loss (FNOL)", "Repair Estimates and Invoices", etc.).
 
-**Classification Result:**"""
+"""
     
     summary_prompt = f"""Provide a concise 2-3 sentence summary of this document focusing on the key information and purpose:
 
@@ -274,10 +274,11 @@ Summary:"""
             genai.configure(api_key=api)
             model = genai.GenerativeModel('gemini-2.5-flash')
             
-            # Get classification
+            # Get classification (returns string from Azure)
             classification_response = get_azure_response(question_prompt_1)
             print(classification_response)
-            # Get summary
+
+            # Get summary (returns Gemini response object)
             summary_response = model.generate_content(summary_prompt)
             
             # Track metrics
@@ -287,16 +288,11 @@ Summary:"""
             doc_type = "Other"
             summary = "Unable to generate summary"
             
-            if classification_response and hasattr(classification_response, 'candidates') and len(classification_response.candidates) > 0:
-                doc_type = classification_response.candidates[0].content.parts[0].text.strip()
-                
-                # Track classification tokens
-                if hasattr(classification_response, 'usage_metadata'):
-                    AI_TOKEN_COUNT.labels(model='gemini', type='prediction_input').inc(classification_response.usage_metadata.prompt_token_count)
-                    AI_TOKEN_COUNT.labels(model='gemini', type='prediction_output').inc(classification_response.usage_metadata.candidates_token_count)
-                    AI_TOKEN_COUNT.labels(model='gemini', type='total_input').inc(classification_response.usage_metadata.prompt_token_count)
-                    AI_TOKEN_COUNT.labels(model='gemini', type='total_output').inc(classification_response.usage_metadata.candidates_token_count)
+            # classification_response is already a string from get_azure_response
+            if classification_response and not classification_response.startswith("Error") and not classification_response.startswith("Azure Error"):
+                doc_type = classification_response.strip()
             
+            # summary_response is a Gemini response object with candidates
             if summary_response and hasattr(summary_response, 'candidates') and len(summary_response.candidates) > 0:
                 summary = summary_response.candidates[0].content.parts[0].text.strip()
                 
@@ -325,4 +321,4 @@ Summary:"""
     return "Error", "All API keys have exceeded their limits"
    
 if __name__ == "__main__":
-    get_gemini_response_with_context("FIRST NOTICE OF LOSS. Policy Number: ABC123456. Date of loss: 03/15/2024. Claim number: CL789. I hereby provide notice that damage occurred to my insured property. Claimant signature required.")
+    print(get_azure_response("FIRST NOTICE OF LOSS. Policy Number: ABC123456. Date of loss: 03/15/2024. Claim number: CL789. I hereby provide notice that damage occurred to my insured property. Claimant signature required."))

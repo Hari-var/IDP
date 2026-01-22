@@ -1,8 +1,4 @@
 import os
-from app.config import DB_PATH
-import time
-import sqlite3
-from datetime import datetime
 from PIL import Image, ImageSequence
 import re
 from bs4 import BeautifulSoup
@@ -10,20 +6,26 @@ import cv2
 import numpy as np
 import docx2txt
 import pandas as pd
-import pytesseract
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Users\ShashankTudum\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'  # Update with your Tesseract path
-
 from sentence_transformers import SentenceTransformer
 from sklearn.cluster import AgglomerativeClustering
 import numpy as np
 import extract_msg
-import email
-from app.config import BASE_DIR
+from app.helpers.config import BASE_DIR
 from email import policy
 from email.parser import BytesParser
 from app import process
 from PyPDF2 import PdfReader
-import google.generativeai as genai  
+import regex as re
+# import google.generativeai as genai 
+from azure.ai.documentintelligence import DocumentIntelligenceClient
+from azure.core.credentials import AzureKeyCredential
+from app.helpers.config import endpoint as AZURE_ENDPOINT, key as AZURE_KEY
+
+doc_client = DocumentIntelligenceClient(
+    endpoint=AZURE_ENDPOINT,
+    credential=AzureKeyCredential(AZURE_KEY)
+)
+
 
 # def get_gemini_response(user_message):
     
@@ -41,7 +43,11 @@ import google.generativeai as genai
 #         return f"Error: {str(e)}"
 
 
-
+def pil_to_bytes(image):
+    from io import BytesIO
+    buf = BytesIO()
+    Image.fromarray(image).save(buf, format="PNG")
+    return buf.getvalue()
 
 def read_eml(file_path, chars_per_page=1000):
     # Read and parse the EML file
@@ -233,8 +239,8 @@ def parse_hocr(hocr_content):
                 'center_x': (x1 + x2) / 2
             })
     
+    print(words)
     return words
-
 
 
 def extract_information(hocr_content):
@@ -245,42 +251,57 @@ def extract_information(hocr_content):
     # Remove pairs where both key and value are None or empty
     key_value_pairs = [pair for pair in key_value_pairs if pair[0] or pair[1]]
     
+    print(key_value_pairs)
     return key_value_pairs
 
 
 def extract_text(image, config, timeout=30):
-    """Extract text using basic Tesseract with timeout."""
+    """
+    Azure OCR replacement for pytesseract.image_to_string
+    image_bytes: bytes (open(file, 'rb').read())
+    """
     try:
-        extracted_text = pytesseract.image_to_string(
-            image, 
-            lang='eng',
-            timeout=timeout, 
-            config=f'{config} -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$abcdefghijklmnopqrstuvwxyz[]().,@'
+        poller = doc_client.begin_analyze_document(
+            model_id="prebuilt-read",
+            body=image
         )
-        return extracted_text
+
+        result = poller.result(timeout=timeout)
+
+        lines = []
+        for page in result.pages:
+            for line in page.lines:
+                lines.append(line.content)
+
+        return "\n".join(lines)
+
     except Exception as e:
         print(f"Basic text extraction failed: {str(e)}")
         return ""
 def extract_and_process_hocr(image, config, timeout=30):
+    hocr = ["<html><body>"]
     try:
-        extracted_text = pytesseract.image_to_pdf_or_hocr(
-            image, 
-            lang='eng', 
-            extension='hocr',
-            timeout=timeout,
-            config=f'{config} -c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$abcdefghijklmnopqrstuvwxyz[]().,@"  preserve_interword_spaces=1'
-        )
-        hocr_str = extracted_text.decode('utf-8')
-        extracted_text = ""
-        
-        lines = extract_information(hocr_str)
-        for key, value in lines:
-            if key:
-                extracted_text += f"{key}: {value}\n"
-            else:
-                extracted_text += f"{value}\n"
+        for page in image.pages:
+            hocr.append(f'<div class="ocr_page" id="page_{page.page_number}">')
 
-        return extracted_text
+            for i, line in enumerate(page.lines):
+                bbox = line.polygon
+                if bbox:
+                    xs = [p.x for p in bbox]
+                    ys = [p.y for p in bbox]
+                    bbox_str = f"{int(min(xs))} {int(min(ys))} {int(max(xs))} {int(max(ys))}"
+                else:
+                    bbox_str = "0 0 0 0"
+
+                hocr.append(
+                    f'<span class="ocr_line" id="line_{i}" title="bbox {bbox_str};">'
+                    f'{line.content}</span>'
+                )
+
+            hocr.append("</div>")
+
+        hocr.append("</body></html>")
+        return "\n".join(hocr)
     except Exception as e:
         print(f"OCR extraction failed: {str(e)}")
         return extract_text(image, config, timeout)
@@ -293,16 +314,17 @@ def tif_process(file_path):
     
 def batch_process_ocr_text_extraction(batch_data):
     result = []
-    idx = batch_data[0]
-    for image in batch_data[1]:
+    idx, images = batch_data
+    for image in images:
         try:
             final_image = preprocessImage(image)
+            image_bytes = pil_to_bytes(final_image)
             config = '--oem 3 --psm 12'
             # Try with initial short timeout
-            extracted_text = extract_and_process_hocr(final_image, config, timeout=30)
+            extracted_text = extract_text(image_bytes, config, timeout=30)
             if not extracted_text.strip():
                 # If failed, retry with longer timeout
-                extracted_text = extract_and_process_hocr(final_image, config, timeout=60)
+                extracted_text = extract_text(image_bytes, config, timeout=60)
             result.append(extracted_text)
         except Exception as e:
             print(f"OCR processing error: {str(e)}")
@@ -310,9 +332,7 @@ def batch_process_ocr_text_extraction(batch_data):
     return idx, result
 
 
-conn = sqlite3.connect(DB_PATH)
-cursor = conn.cursor()
-current_timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
 
 
 import os
@@ -337,8 +357,7 @@ def operation(file_path,source):
     extension = os.path.splitext(file_path)[1]
     # doc_types=["Litigation","Police Report","Medical","Demand Letter","Claims Database","Arbitration","Other"]
     if extension  in [".tiff",".jpeg",".jpg",".png"]:
-        image = tif_process(file_path)
-        images=image
+        images = tif_process(file_path)
         page_count=len(images)
         # OCR processing directly
         extracted_text = []
@@ -428,5 +447,28 @@ def operation(file_path,source):
                 process.process_file(full_path,source=source) 
 
     return text
+
+def main():
+    file_path = r"C:\practice\Files\uploaded_files\Subrogation029.tiff"  # path to your TIFF file
+
+    # Load TIFF pages
+    images = tif_process(file_path)
+
+    # Prepare batch input (single batch example)
+    batch_idx = 0
+    batch_data = (batch_idx, images)
+
+    # Run OCR batch processing
+    idx, ocr_results = batch_process_ocr_text_extraction(batch_data)
+
+    # Handle results
+    for page_num, text in enumerate(ocr_results):
+        print(f"\n--- Page {page_num + 1} ---")
+        print(text)
+
+
+if __name__ == "__main__":
+    main()
+
     
 
