@@ -19,3 +19,4 @@ pypandoc
 pyodbc
 sqlalchemy
 azure-storage-blob
+openai
