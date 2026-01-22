@@ -6,7 +6,6 @@ prometheus-client
 pandas
 Pillow
 opencv-python
-pytesseract
 sentence-transformers
 scikit-learn
 numpy
@@ -18,3 +17,5 @@ docx2txt
 PyMuPDF
 pypandoc
 pyodbc
+sqlalchemy
+azure-storage-blob

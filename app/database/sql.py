@@ -2,7 +2,6 @@ from app.database.database import sessionlocal, db_dependency
 from app.database.model import Document_logs
 from pydantic import BaseModel
 from typing import Optional
-import datetime
 
 class DocRequest(BaseModel):
     document_name: str

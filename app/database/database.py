@@ -3,7 +3,6 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from fastapi import Depends #type: ignore
 from typing import Annotated
 from sqlalchemy.orm import Session
-import urllib.parse
 # import database.model as model
 from app.helpers.config import cloud_db
 

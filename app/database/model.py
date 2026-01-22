@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Dict
 from app.database.database import Base
 from sqlalchemy import Column, Integer, String, Text, DateTime
 
