@@ -7,7 +7,6 @@ pandas
 Pillow
 opencv-python
 sentence-transformers
-scikit-learn
 numpy
 extract-msg
 PyPDF2

@@ -6,8 +6,8 @@ import cv2
 import numpy as np
 import docx2txt
 import pandas as pd
-from sentence_transformers import SentenceTransformer
-from sklearn.cluster import AgglomerativeClustering
+# from sentence_transformers import SentenceTransformer
+# from sklearn.cluster import AgglomerativeClustering
 import numpy as np
 import extract_msg
 from app.helpers.config import BASE_DIR
@@ -90,64 +90,64 @@ def pdf_to_text(pdf_path):
                 text += page.extract_text()
             return text
 
-def cluster_paragraphs(paragraphs, model_name='all-MiniLM-L6-v2', relax_pages=1):
-    """Cluster paragraphs sequentially with boundary relaxation"""
-    model = SentenceTransformer(model_name)
-    embeddings = model.encode(paragraphs)
+# def cluster_paragraphs(paragraphs, model_name='all-MiniLM-L6-v2', relax_pages=1):
+#     """Cluster paragraphs sequentially with boundary relaxation"""
+#     model = SentenceTransformer(model_name)
+#     embeddings = model.encode(paragraphs)
     
-    # Initial clustering
-    clustering = AgglomerativeClustering(
-        n_clusters=None,
-        metric='cosine', # cosine, euclidean, manhattan - cosine is used for sentence embeddings, euclidean for word embeddings, manhattan for BERT embeddings
-        linkage='average', # average, complete, single - average is used for sentence embeddings, complete for word embeddings, single for BERT embeddings
-        distance_threshold=0.65, # lower this value to get more clusters
-    )
-    labels = clustering.fit_predict(embeddings)
+#     # Initial clustering
+#     clustering = AgglomerativeClustering(
+#         n_clusters=None,
+#         metric='cosine', # cosine, euclidean, manhattan - cosine is used for sentence embeddings, euclidean for word embeddings, manhattan for BERT embeddings
+#         linkage='average', # average, complete, single - average is used for sentence embeddings, complete for word embeddings, single for BERT embeddings
+#         distance_threshold=0.65, # lower this value to get more clusters
+#     )
+#     labels = clustering.fit_predict(embeddings)
     
-    # Find sequential boundaries
-    boundaries = []
-    current_label = labels[0]
-    start_idx = 0
+#     # Find sequential boundaries
+#     boundaries = []
+#     current_label = labels[0]
+#     start_idx = 0
     
-    for i in range(1, len(labels)):
-        if labels[i] != current_label:
-            boundaries.append((start_idx, i-1))
-            start_idx = i
-            current_label = labels[i]
-    boundaries.append((start_idx, len(labels)-1))
+#     for i in range(1, len(labels)):
+#         if labels[i] != current_label:
+#             boundaries.append((start_idx, i-1))
+#             start_idx = i
+#             current_label = labels[i]
+#     boundaries.append((start_idx, len(labels)-1))
     
-    # Relax boundaries
-    relaxed_boundaries = []
-    prev_end = -1
+#     # Relax boundaries
+#     relaxed_boundaries = []
+#     prev_end = -1
     
-    for i, (start, end) in enumerate(boundaries):
-        # Don't relax the start of first cluster
-        if i == 0:
-            new_start = start
-        else:
-            # Try to extend start backwards up to relax_pages
-            potential_start = max(prev_end - relax_pages + 1, prev_end + 1)
-            new_start = potential_start
+#     for i, (start, end) in enumerate(boundaries):
+#         # Don't relax the start of first cluster
+#         if i == 0:
+#             new_start = start
+#         else:
+#             # Try to extend start backwards up to relax_pages
+#             potential_start = max(prev_end - relax_pages + 1, prev_end + 1)
+#             new_start = potential_start
             
-        # Don't relax the end of last cluster    
-        if i == len(boundaries) - 1:
-            new_end = end
-        else:
-            # Try to extend end forward up to relax_pages
-            next_start = boundaries[i+1][0]
-            potential_end = min(end + relax_pages, next_start)
-            new_end = potential_end
+#         # Don't relax the end of last cluster    
+#         if i == len(boundaries) - 1:
+#             new_end = end
+#         else:
+#             # Try to extend end forward up to relax_pages
+#             next_start = boundaries[i+1][0]
+#             potential_end = min(end + relax_pages, next_start)
+#             new_end = potential_end
             
-        relaxed_boundaries.append((new_start, new_end))
-        prev_end = new_end
+#         relaxed_boundaries.append((new_start, new_end))
+#         prev_end = new_end
         
-    # Create final clusters based on relaxed boundaries
-    final_clusters = []
-    for start, end in relaxed_boundaries:
-        cluster_items = [(i, paragraphs[i]) for i in range(start, end + 1)]
-        final_clusters.append(cluster_items)
+#     # Create final clusters based on relaxed boundaries
+#     final_clusters = []
+#     for start, end in relaxed_boundaries:
+#         cluster_items = [(i, paragraphs[i]) for i in range(start, end + 1)]
+#         final_clusters.append(cluster_items)
         
-    return final_clusters
+#     return final_clusters
 
 def extract_key_value_pairs(lines, x_tolerance=50):
     key_value_pairs = []
@@ -367,16 +367,17 @@ def operation(file_path,source):
         # print(extracted_text)
         if page_count < 2:
             grouped_texts = extracted_text
-            grouped_page_numbers = [[1]]
+            # grouped_page_numbers = [[1]]
         else:
-            grouped_pages = cluster_paragraphs(extracted_text)
-            grouped_pages = [page for page in grouped_pages if page]
-            grouped_page_numbers = [[page[0] for page in cluster] for cluster in grouped_pages]
-            # grouped_texts = ["\n".join([para[1] for para in cluster]) for cluster in grouped_pages]
-            grouped_texts = [
-            "\n".join([str(para[1]) if not isinstance(para[1], str) else para[1] for para in cluster])
-            for cluster in grouped_pages
-        ]
+            # grouped_pages = cluster_paragraphs(extracted_text)
+            # grouped_pages = [page for page in grouped_pages if page]
+            # grouped_page_numbers = [[page[0] for page in cluster] for cluster in grouped_pages]
+            # # grouped_texts = ["\n".join([para[1] for para in cluster]) for cluster in grouped_pages]
+            grouped_texts = extracted_text
+        # [
+        #     "\n".join([str(para[1]) if not isinstance(para[1], str) else para[1] for para in cluster])
+        #     for cluster in grouped_pages
+        # ]
         text=grouped_texts
         # print(text)
     elif extension in [".xls",".XLS"]:
